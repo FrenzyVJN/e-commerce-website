@@ -9,11 +9,9 @@
             font-family: Arial, sans-serif;
             background-color: #f4f4f4;
             margin: 0;
-            padding: 0;
-        }
+            padding: 0;}
 
         header {
-            /* font-family: monospace, system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif; */
             background-color: #0B0A5A;
             padding: 1% 0;
             text-align: center;
@@ -121,11 +119,8 @@
     <header>
         <h1>Frenzy's Tech Store</h1>
     </header>
-    
     <div class="container">
         <div class="grid" id="laptops-grid"></div>
-        
-        <!-- Shopping Cart -->
         <div class="cart">
             <h2>Your Cart</h2>
             <ul id="cart-list"></ul>
@@ -217,12 +212,11 @@
                         }
                     ]
                 }
-                // Add more laptop configurations here
             ]
         };
 
-        function populateLaptops() {
-            const laptopsGrid = document.getElementById('laptops-grid');
+        function PL() {
+            const LG = document.getElementById('laptops-grid');
             
             laptopsData.laptops.forEach((laptop, index) => {
                 const laptopElement = document.createElement('div');
@@ -240,7 +234,7 @@
                     <button onclick="customizeLaptop(${index})">Add to Cart</button>
                 `;
                 
-                laptopsGrid.appendChild(laptopElement);
+                LG.appendChild(laptopElement);
             });
         }
 
@@ -265,14 +259,9 @@
                     };
                     cart.push(customizedLaptop);
                     updateCartDisplay();
-                } else {
-                    alert('Invalid RAM or storage configuration.');
-                }
-            } else {
-                alert('Laptop not found with the specified index.');
-            }
+                } 
+            } 
         }
-
         function updateCartDisplay() {
             const cartList = document.getElementById('cart-list');
             cartList.innerHTML = '';
@@ -294,12 +283,10 @@
             if (index >= 0 && index < cart.length) {
                 const removedLaptop = cart.splice(index, 1);
                 updateCartDisplay();
-            } else {
-                alert('Invalid index. Laptop not removed from the cart.');
-            }
+            } 
         }
 
-        populateLaptops();
+        PL();
     </script>
 </body>
 </html>
